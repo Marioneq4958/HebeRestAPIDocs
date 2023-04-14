@@ -79,6 +79,7 @@ Content-Type: application/json
     "SecurityToken": "FK10000",
     "SelfIdentifier": "00000000-0000-0000-0000-000000000000"
   },
+  "FirebaseToken": "XYZ",
   "API": 1,
   "RequestId": "00000000-0000-0000-0000-000000000000",
   "Timestamp": "0",
@@ -144,11 +145,11 @@ Parametry `vCannonicalUrl`, `Digest` i `Signature` można uzyskać używając [h
   - `SecurityToken` _string_\
     Token
 
-  - `FirebaseToken` _string_ _opcjonalny_\
-    Token firebase
-
   - `SelfIdentifier` _string_\
     Losowe UUID v4
+
+- `FirebaseToken` _string_ _opcjonalny_\
+    Token firebase
 
 - `API` _number_\
   Wersja Rest API
