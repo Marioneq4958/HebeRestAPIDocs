@@ -219,7 +219,7 @@ Porównanie `mode` _1_ i _2_
 
 ### Schemat
 
-- `Envelope` _dictionary_
+- `Envelope` _array_
 
   - `TopLevelPartition` _string_\
     Symbol grupujący
