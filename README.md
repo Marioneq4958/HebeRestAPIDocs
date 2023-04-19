@@ -4,3 +4,4 @@ Nieoficjalna dokumentacja Rest API używanego przez aplikację [Dzienniczek VULC
 ## Spis treści
 
 - [Rejestracja nowego cerytyfikatu](./rejestracja_certyfikatu.md)
+- [Pobieranie uczniów](./pobieranie_uczniow.md)
