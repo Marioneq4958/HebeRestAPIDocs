@@ -272,10 +272,10 @@ Porównanie `mode` _1_ i _2_
       Nazwa użytkownika
 
     - `FirstName` _string_\
-      Imie
+      Imię
 
     - `SecondName` _string_\
-      Drugie imie
+      Drugie imię
 
     - `Surname` _string_\
       Nazwisko
@@ -341,7 +341,7 @@ Porównanie `mode` _1_ i _2_
       Id w grupie klienów
 
     - `Name` _string_\
-      Imie
+      Imię
 
     - `Surname` _string_\
       Nazwisko
@@ -373,7 +373,7 @@ Porównanie `mode` _1_ i _2_
         Aktualny poziom i symbol oddziału oraz skrót jednostki składowej
 
       - `Name` _string_\
-        Imie
+        Imię
 
       - `Surname` _string_\
         Naziwsko
@@ -403,10 +403,10 @@ Porównanie `mode` _1_ i _2_
         Nazwa użytkownika
 
       - `FirstName` _string_\
-        Imie
+        Imię
 
       - `SecondName` _string_\
-        Drugie imie
+        Drugie imię
 
       - `Surname` _string_\
         Nazwisko
