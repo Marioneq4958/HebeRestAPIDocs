@@ -170,18 +170,18 @@ Parametry `vCannonicalUrl`, `Digest` i `Signature` można uzyskać używając [h
 ```http
 {
   "Envelope": {
-    "OS": "Android",
-    "DeviceModel": "WulkanowyPhone",
-    "Certificate": "XYZ=",
-    "CertificateType": "X509",
-    "CertificateThumbprint": "XYZ",
-    "PIN": "999999",
-    "SecurityToken": "FK10000",
-    "SelfIdentifier": "00000000-0000-0000-0000-000000000000"
+    "LoginId": 207,
+    "RestURL": "http://api.fakelog.cf/powiatwulkanowy/",
+    "UserLogin": "jan@fakelog.cf",
+    "UserName": "jan@fakelog.cf"
   },
   "EnvelopeType": "AccountPayload",
   "InResponseTo": null,
   "RequestId": "00000000-0000-0000-0000-000000000000",
+  "Status": {
+    "Code": 0,
+    "Message": "OK"
+  },
   "Timestamp": 0,
   "TimestampFormatted": "1970-01-01 00:00:00"
 }
