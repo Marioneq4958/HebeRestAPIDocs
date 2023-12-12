@@ -88,7 +88,7 @@ Content-Type: application/json
 ```http
 {
   "Envelope": "Hello hebe!",
-  "EnvelopeType": "string",
+  "EnvelopeType": "String",
   "InResponseTo": null,
   "RequestId": "00000000-0000-0000-0000-000000000000",
   "Status": {
