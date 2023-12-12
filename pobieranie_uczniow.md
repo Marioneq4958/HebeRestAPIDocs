@@ -47,7 +47,7 @@ Parametry `vCannonicalUrl` i `Signature` można uzyskać używając [wulkanowy/u
 
 #### Query
 
-- `mode` _domyślnie `1`_
+- `mode` _domyślnie `1`, zalecane `2`_
 
 - `lastSyncDate` _opcjonaly_\
   Ostatnia data synchronizacji w formacie `yyyy-MM-dd  HH:mm:ss`
