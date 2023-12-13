@@ -26,7 +26,7 @@ Signature: keyId="XYZ",headers="vCanonicalUrl Digest vDate" algorithm="sha256wit
 
 ## Parametry
 
-### [Nagłówki](./wysylanie_zadania.md#nagłówki)
+### [Nagłówki](./wysylanie_zadan.md#nagłówki)
 
 ### Query
 
