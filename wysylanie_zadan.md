@@ -26,7 +26,7 @@ Do każdego żądania z wyjątkiem rejestrowania certyfikatu i pobierania listy 
 - `Signature`\
   Podpis żądania
 
-Parametry `vCannonicalUrl` i `Signature` można uzyskać używając [wulkanowy/uonet-request-signer](wulkanowy/uonet-request-signer)
+Parametry `vCannonicalUrl` i `Signature` można uzyskać używając [wulkanowy/uonet-request-signer](https://github.com/wulkanowy/uonet-request-signer)
 
 #### Żądanie (tylko dla POST)
 
