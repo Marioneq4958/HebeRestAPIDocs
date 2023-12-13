@@ -2,13 +2,16 @@
 
 Po zarejestrowaniu certyfikatu można pobrać listę uczniów przypisanych do certyfikatu.
 
-## Żądanie
-
 ```http
 GET /api/mobile/register/hebe
 ```
 
-### Przykładowe żądanie
+## Potrzebne dane
+- Zarejestrowany ceryfikat ([Jak zarejestrować certyfikat?](./rejestrowanie_certyfikatu.md))
+- Adres Rest API (tan sam, który był używany podczas rejestracji certyfikatu)
+
+
+## Przykładowe żądanie
 
 ```http
 GET http://api.fakelog.cf/powiatwulkanowy/api/mobile/register/hebe
@@ -21,47 +24,25 @@ vCanonicalUrl: api%2fmobile%2fregister%2fnew
 Signature: keyId="XYZ",headers="vCanonicalUrl Digest vDate" algorithm="sha256withrsa",signature=Base64(SHA256withRSA(XYZ==))
 ```
 
-### Parametry
+## Parametry
 
-#### Nagłówki
+### [Nagłówki](./wysylanie_zadania.md#nagłówki)
 
-- `vOS`\
-  System operacyjny urządzenia
-
-- `vDeviceModel`\
-  Nazwa certyfikatu lub urządzenia
-
-- `vAPI` _1_\
-  Wersja API
-
-- `vDate`\
-  Aktualny czas w formacie `E, d MMM yyyy HH:mm:ss zzz`
-
-- `vCannonicalUrl`\
-  Zakodowany endpoint
-
-- `Signature`\
-  Podpis żądania
-
-Parametry `vCannonicalUrl` i `Signature` można uzyskać używając [wulkanowy/uonet-request-signer](wulkanowy/uonet-request-signer)
-
-#### Query
+### Query
 
 - `mode` _domyślnie `1`, zalecane `2`_
 
 - `lastSyncDate` _opcjonaly_\
   Ostatnia data synchronizacji w formacie `yyyy-MM-dd  HH:mm:ss`
 
-Porównanie `mode` _1_ i _2_
+#### Porównanie `mode` _1_ i _2_
 
 | Pole w odpowiedzi | Mode 1                                            | Mode 2                                                                  |
 | ----------------- | ------------------------------------------------- | ----------------------------------------------------------------------- |
 | `EducatorList`    | Zwraca `null`                                     | Zwraca listę skrzynek wychowawców oddziału dla nowego modułu wiadomości |
 | `SenderEntry`     | Zwraca dane nadawcy dla starego modułu wiadomości | Zwraca `null`                                                           |
 
-## Odpowiedź
-
-### Przykładowa odpowiedź
+## Przykładowa odpowiedź
 
 ```http
 {
@@ -217,9 +198,9 @@ Porównanie `mode` _1_ i _2_
 }
 ```
 
-### Schemat
+## Schemat `Envelope` _array_
 
-- `Envelope` _array_
+Schemat odpowiedzi znajdziesz w [Wysyłanie żądań](./wysylanie_zadan.md).
 
   - `TopLevelPartition` _string_\
     Symbol grupujący
@@ -249,7 +230,7 @@ Porównanie `mode` _1_ i _2_
   - `FullSync` _boolean_
 
   - `SenderEntry` _dictionary_ _opcjonalny_\
-    Dane nadawcy wiadomości, używane w starym module wiadomości
+    Dane nadawcy wiadomości, pozostałość po starym module wiadomości, nie jest to już używane. Pole zwracane tylko w mode 1, w mode 2 zawsze ma wartość `null`.
 
     - `Address` _string_\
       Adres
@@ -297,7 +278,7 @@ Porównanie `mode` _1_ i _2_
       Skrót
 
     - `RestURL` _string_\
-      Adres bazowy Rest API dla jednostki sprawozdawczej
+      Adres bazowy Rest API dla jednostki sprawozdawczej, potrzebny do wysyłania zapytań o np. oceny
 
     - `Name` _string_\
       Nazwa
@@ -333,7 +314,7 @@ Porównanie `mode` _1_ i _2_
   - `Capabilities` _array_
 
   - `Educators` _array_\
-    Lista wychowawców oddziału, używane w starym module wiadomości
+    Lista wychowawców oddziału, pozostałość po starym module wiadomości
 
     - `Id` _number_
 
@@ -382,7 +363,7 @@ Porównanie `mode` _1_ i _2_
         Inicjały
 
     - `EducatorList` _array_\
-      Lista skrzynek wychowawców oddziału, używane w nowym module wiadomości
+      Lista skrzynek wychowawców oddziału, używane w nowym module wiadomości. Pole zwracane w mode 2, w mode 1 zawsze ma wartość null.
 
       - `GlobalKey` _string_
 
@@ -525,25 +506,3 @@ Porównanie `mode` _1_ i _2_
 
     - `Name` _string_\
       Nazwa skrzynki
-
-- `EnvelopeType` _string_\
-  Typ `Envelope`
-
-- `InResponseTo` _null_
-
-- `RequestId` _string_\
-  Losowe UUID v4
-
-- `Status` _dictionary_
-
-  - `Code` _number_\
-    Kod statusu
-
-  - `Message` _string_\
-    Opis statusu
-
-- `Timestamp` _string_\
-  Data odpowiedzi w strefie czasowej UTC+2 w timestamp'ie
-
-- `TimestampFormatted` _string_\
-  Data odpowiedzi w strefie czasowej UTC+2 w formacie `yyyy-MM-dd  HH:mm:ss`
